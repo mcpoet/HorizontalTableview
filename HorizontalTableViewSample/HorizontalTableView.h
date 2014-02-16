@@ -34,7 +34,8 @@
 
 @end
 
-@interface HorizontalTableView : UIView {
+@interface HorizontalTableView : UIView
+{
 	NSMutableArray *_pageViews;
 	UIScrollView *_scrollView;
 	NSUInteger _currentPageIndex;

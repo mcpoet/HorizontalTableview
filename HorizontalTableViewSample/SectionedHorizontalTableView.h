@@ -40,7 +40,7 @@ typedef SectionedHorizontalTableView HorTableView;
     NSUInteger       _numberOfColumns;
 }
 
-@property (nonatomic, strong) NSObject<SectionedTableViewDelegate>* delegate;
+@property (nonatomic, strong) IBOutlet NSObject<SectionedTableViewDelegate>* delegate;
 
 - (NSInteger)numberOfColumnsForTableView:(HorizontalTableView *)tableView;
 - (UIView *)tableView:(HorizontalTableView *)tableView viewForIndex:(NSInteger)index;

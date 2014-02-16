@@ -154,12 +154,12 @@
 
 -(CGFloat)widthForColumn
 {
-    return 150.0f;
+    return 50.0f;
 }
 
 -(CGFloat)sectionHeight
 {
-    return 80;
+    return 50;
 }
 
 -(CGFloat)sectionWidth
