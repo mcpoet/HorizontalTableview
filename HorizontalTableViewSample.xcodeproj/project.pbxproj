@@ -21,6 +21,11 @@
 		B0EA3EEC18B0B3DB001DFD63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EA3ECE18B0B3DB001DFD63 /* UIKit.framework */; };
 		B0EA3EF418B0B3DB001DFD63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0EA3EF218B0B3DB001DFD63 /* InfoPlist.strings */; };
 		B0EA3EF618B0B3DB001DFD63 /* HorizontalTableViewSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EA3EF518B0B3DB001DFD63 /* HorizontalTableViewSampleTests.m */; };
+		B0EA3F0518B0B41A001DFD63 /* HorizontalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EA3F0018B0B41A001DFD63 /* HorizontalTableView.m */; };
+		B0EA3F0618B0B41A001DFD63 /* PageLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EA3F0218B0B41A001DFD63 /* PageLoopViewController.m */; };
+		B0EA3F0718B0B41A001DFD63 /* SectionedHorizontalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EA3F0418B0B41A001DFD63 /* SectionedHorizontalTableView.m */; };
+		B0EA3F0C18B0B463001DFD63 /* SectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0EA3F0B18B0B463001DFD63 /* SectionView.xib */; };
+		B0EA3F0E18B0B470001DFD63 /* ColumnView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0EA3F0D18B0B470001DFD63 /* ColumnView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,14 @@
 		B0EA3EF118B0B3DB001DFD63 /* HorizontalTableViewSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HorizontalTableViewSampleTests-Info.plist"; sourceTree = "<group>"; };
 		B0EA3EF318B0B3DB001DFD63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B0EA3EF518B0B3DB001DFD63 /* HorizontalTableViewSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalTableViewSampleTests.m; sourceTree = "<group>"; };
+		B0EA3EFF18B0B41A001DFD63 /* HorizontalTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalTableView.h; sourceTree = "<group>"; };
+		B0EA3F0018B0B41A001DFD63 /* HorizontalTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalTableView.m; sourceTree = "<group>"; };
+		B0EA3F0118B0B41A001DFD63 /* PageLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageLoopViewController.h; sourceTree = "<group>"; };
+		B0EA3F0218B0B41A001DFD63 /* PageLoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageLoopViewController.m; sourceTree = "<group>"; };
+		B0EA3F0318B0B41A001DFD63 /* SectionedHorizontalTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionedHorizontalTableView.h; sourceTree = "<group>"; };
+		B0EA3F0418B0B41A001DFD63 /* SectionedHorizontalTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionedHorizontalTableView.m; sourceTree = "<group>"; };
+		B0EA3F0B18B0B463001DFD63 /* SectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionView.xib; sourceTree = "<group>"; };
+		B0EA3F0D18B0B470001DFD63 /* ColumnView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColumnView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +125,16 @@
 		B0EA3ED018B0B3DB001DFD63 /* HorizontalTableViewSample */ = {
 			isa = PBXGroup;
 			children = (
+				B0EA3F0818B0B429001DFD63 /* HorizontalTableView */,
+				B0EA3F0118B0B41A001DFD63 /* PageLoopViewController.h */,
+				B0EA3F0218B0B41A001DFD63 /* PageLoopViewController.m */,
 				B0EA3ED918B0B3DB001DFD63 /* AppDelegate.h */,
 				B0EA3EDA18B0B3DB001DFD63 /* AppDelegate.m */,
 				B0EA3EDC18B0B3DB001DFD63 /* Main.storyboard */,
 				B0EA3EDF18B0B3DB001DFD63 /* ViewController.h */,
 				B0EA3EE018B0B3DB001DFD63 /* ViewController.m */,
+				B0EA3F0D18B0B470001DFD63 /* ColumnView.xib */,
+				B0EA3F0B18B0B463001DFD63 /* SectionView.xib */,
 				B0EA3EE218B0B3DB001DFD63 /* Images.xcassets */,
 				B0EA3ED118B0B3DB001DFD63 /* Supporting Files */,
 			);
@@ -150,6 +168,17 @@
 				B0EA3EF218B0B3DB001DFD63 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B0EA3F0818B0B429001DFD63 /* HorizontalTableView */ = {
+			isa = PBXGroup;
+			children = (
+				B0EA3EFF18B0B41A001DFD63 /* HorizontalTableView.h */,
+				B0EA3F0018B0B41A001DFD63 /* HorizontalTableView.m */,
+				B0EA3F0318B0B41A001DFD63 /* SectionedHorizontalTableView.h */,
+				B0EA3F0418B0B41A001DFD63 /* SectionedHorizontalTableView.m */,
+			);
+			name = HorizontalTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,7 +257,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0EA3F0C18B0B463001DFD63 /* SectionView.xib in Resources */,
 				B0EA3EE318B0B3DB001DFD63 /* Images.xcassets in Resources */,
+				B0EA3F0E18B0B470001DFD63 /* ColumnView.xib in Resources */,
 				B0EA3ED518B0B3DB001DFD63 /* InfoPlist.strings in Resources */,
 				B0EA3EDE18B0B3DB001DFD63 /* Main.storyboard in Resources */,
 			);
@@ -250,7 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0EA3EE118B0B3DB001DFD63 /* ViewController.m in Sources */,
+				B0EA3F0618B0B41A001DFD63 /* PageLoopViewController.m in Sources */,
+				B0EA3F0518B0B41A001DFD63 /* HorizontalTableView.m in Sources */,
 				B0EA3EDB18B0B3DB001DFD63 /* AppDelegate.m in Sources */,
+				B0EA3F0718B0B41A001DFD63 /* SectionedHorizontalTableView.m in Sources */,
 				B0EA3ED718B0B3DB001DFD63 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

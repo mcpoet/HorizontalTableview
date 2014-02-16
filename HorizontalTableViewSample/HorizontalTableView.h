@@ -43,7 +43,7 @@
     NSInteger _visibleColumnCount;
     NSNumber *_columnWidth;
     
-    id _delegate;
+    NSObject<HorizontalTableViewDelegate>* _delegate;
     
     NSMutableArray *_columnPool;
     
@@ -55,9 +55,9 @@
     CGFloat _sectionWidth;
 }
 
-@property (assign) IBOutlet id<HorizontalTableViewDelegate> delegate;
-@property (nonatomic, retain) HorizontalTableView* sectionView;
-@property (nonatomic, retain) NSArray* sectionIndices;
+@property (nonatomic, strong) IBOutlet NSObject<HorizontalTableViewDelegate>* delegate;
+@property (nonatomic, strong) HorizontalTableView* sectionView;
+@property (nonatomic, strong) NSArray* sectionIndices;
 
 - (void)refreshData;
 - (UIView *)dequeueColumnView;

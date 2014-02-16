@@ -48,12 +48,12 @@
     self.columnView = nil;
 }
 
-- (void)dealloc
-{
-    [_sectionTableView release], _sectionTableView = nil;
-    [_columnView release], _columnView = nil;
-    [super dealloc];
-}
+//- (void)dealloc
+//{
+//    [_sectionTableView release], _sectionTableView = nil;
+//    [_columnView release], _columnView = nil;
+//    [super dealloc];
+//}
 
 #pragma mark -
 
@@ -120,7 +120,7 @@
 {
     UIView* sect = [tableView dequeueColumnView];
     if (!sect) {
-        DLog(@"Section Constructing new view");
+        NSLog(@"Section Constructing new view");
         [[NSBundle mainBundle] loadNibNamed:@"SectionView" owner:self options:nil];
         sect = self.sectionView;
         CGRect frame = sect.frame;
@@ -137,8 +137,8 @@
 -(UIView *)tableView:(HorizontalTableView *)tableView viewForColumn:(NSUInteger)c inSection:(NSUInteger)s
 {
     UIView *vw = [tableView dequeueColumnView];
-    if (!vw) {
-//        DLog(@"Constructing new view");
+    if (!vw)
+    {
         [[NSBundle mainBundle] loadNibNamed:@"ColumnView" owner:self options:nil];
         vw = self.columnView;
         self.columnView = nil;

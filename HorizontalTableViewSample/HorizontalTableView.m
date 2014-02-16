@@ -66,8 +66,7 @@
 
 -(void)setSectionView:(HorizontalTableView *)sectionView
 {
-    [_sectionView release];
-    _sectionView = [sectionView retain];
+    _sectionView = sectionView;
     _currentSection = 0;
     _sectionWidth = [sectionView.delegate columnWidthForTableView:sectionView];
 }
@@ -102,7 +101,7 @@
             pageView = [_delegate tableView:self viewForIndex:pageIndex];
             [self.pageViews replaceObjectAtIndex:pageIndex withObject:pageView];
             [self.scrollView addSubview:pageView];
-            DLog(@"View loaded for page %d", pageIndex);
+            NSLog(@"View loaded for page %d", pageIndex);
         }
 	} else {
 		pageView = [self.pageViews objectAtIndex:pageIndex];
@@ -122,7 +121,7 @@
         if (_delegate)
         {
             CGFloat width = [_delegate columnWidthForTableView:self];
-            _columnWidth = [[NSNumber numberWithFloat:width] retain];
+            _columnWidth = [NSNumber numberWithFloat:width];
         }
     }
     return [_columnWidth floatValue];
@@ -158,17 +157,17 @@
 }
 
 - (UIView *)dequeueColumnView {
-    UIView *vw = [[self.columnPool lastObject] retain];
+    UIView *vw = [self.columnPool lastObject];
     if (vw) {
         [self.columnPool removeLastObject];
-        DLog(@"Supply from reuse pool");
+        NSLog(@"Supply from reuse pool");
     }
-    return [vw autorelease];
+    return vw;
 }
 
 - (void)removeColumn:(NSInteger)index {
     if ([self.pageViews objectAtIndex:index] != [NSNull null]) {
-        DLog(@"Removing view at position %d", index);
+        NSLog(@"Removing view at position %d", index);
         UIView *vw = [self.pageViews objectAtIndex:index];
         [self queueColumnView:vw];
         [vw removeFromSuperview];
@@ -243,7 +242,6 @@
     scroller.alwaysBounceVertical = NO;
     self.scrollView = scroller;
 	[self addSubview:scroller];
-    [scroller release], scroller = nil;
     _sectionOffsets = [[NSMutableArray alloc]initWithCapacity:32];
 
     if (self.sectionIndices)
@@ -255,7 +253,7 @@
         }
     }
     
-    UITapGestureRecognizer* tap = [[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapped:)] autorelease];
+    UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapped:)];
     [self.scrollView addGestureRecognizer:tap];
 }
 
@@ -365,7 +363,7 @@ int signum(float n) { return (n < 0) ? -1 : (n > 0) ? +1 : 0; }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-	DLog(@"scrollViewDidEndDecelerating");
+	NSLog(@"scrollViewDidEndDecelerating");
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -393,12 +391,12 @@ int signum(float n) { return (n < 0) ? -1 : (n > 0) ? +1 : 0; }
 }
 
 
-- (void)dealloc {
-    [_columnPool release], _columnPool = nil;
-    [_columnWidth release], _columnWidth = nil;
-    [_pageViews release], _pageViews = nil;
-    [_scrollView release], _scrollView = nil;
-    [super dealloc];
-}
+//- (void)dealloc {
+//    [_columnPool release], _columnPool = nil;
+//    [_columnWidth release], _columnWidth = nil;
+//    [_pageViews release], _pageViews = nil;
+//    [_scrollView release], _scrollView = nil;
+//    [super dealloc];
+//}
 
 @end

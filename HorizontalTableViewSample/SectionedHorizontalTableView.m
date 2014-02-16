@@ -17,16 +17,16 @@
 {
     self = [super init];
     if (self) {
-        _s = [w retain];
+        _s = w;
     }
     return self;
 }
 
--(void)dealloc
-{
-    [_s release]; _s = nil;
-    [super dealloc];
-}
+//-(void)dealloc
+//{
+//    [_s release]; _s = nil;
+//    [super dealloc];
+//}
 
 -(NSInteger)numberOfColumnsForTableView:(HorizontalTableView *)tableView
 {
@@ -124,13 +124,11 @@
 
 -(void)setDelegate:(NSObject<SectionedTableViewDelegate>*)delegate
 {
-    [_delegate release], _delegate = nil;
-    _delegate = [delegate retain];
+    _delegate = delegate ;
     //Recompute the section indices
     if(_delegate)
     {
         [self recomputeIndices];
-        [_sectionWrapper release], _sectionWrapper = nil;
         _sectionWrapper = [[SectionWrapper alloc]initWithWrappee:self];
         [_sectionView setDelegate:_sectionWrapper];
     }
